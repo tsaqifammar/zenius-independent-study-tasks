@@ -1,23 +1,4 @@
 
-/* ======= dark mode functionality =========== */
-
-let isInDarkMode = false;
-
-function toggleDarkMode() {
-  if (!isInDarkMode) {
-    document.body.classList.add('dark');
-    isInDarkMode = true;
-  } else {
-    document.body.classList.remove('dark');
-    isInDarkMode = false;
-  }
-}
-
-const toggleDarkModeButton = document.getElementById('toggle-dark-mode');
-toggleDarkModeButton.addEventListener('click', toggleDarkMode);
-
-/* ============================================= */
-
 /* ======= load design collection dynamically =========== */
 
 function generateDesignCard(id, name, pic, loveCount, viewCount) {
@@ -77,14 +58,56 @@ function showDesignCollection(designs) {
 
 let designs = [
   { name: 'Tsaqif Ammar', tag: 'animation', pic: 1, loveCount: '1k', viewCount: '14k' },
-  { name: 'Liam Olivia', tag: 'branding', pic: 2, loveCount: '1k', viewCount: '14k' },
-  { name: 'Noah Emma', tag: 'branding', pic: 3, loveCount: '1k', viewCount: '14k' },
-  { name: 'Oliver Evelyn', tag: 'mobile', pic: 4, loveCount: '1k', viewCount: '14k' },
-  { name: 'Elijah Amelia', tag: 'illustration', pic: 5, loveCount: '1k', viewCount: '14k' },
-  { name: 'James Ava', tag: 'print', pic: 6, loveCount: '1k', viewCount: '14k' },
-  { name: 'Lucas Mia', tag: 'product-design', pic: 7, loveCount: '1k', viewCount: '14k' },
+  { name: 'Bella Brock', tag: 'animation', pic: 2, loveCount: '1k', viewCount: '14k' },
+  { name: 'Brock Smith', tag: 'animation', pic: 3, loveCount: '1k', viewCount: '14k' },
+  { name: 'David Alpha', tag: 'animation', pic: 4, loveCount: '1k', viewCount: '14k' },
+  { name: 'Nolan Tsaqif', tag: 'animation', pic: 5, loveCount: '1k', viewCount: '14k' },
+  { name: 'Raven Irwin', tag: 'animation', pic: 6, loveCount: '1k', viewCount: '14k' },
+  { name: 'Lilac Tsaqif', tag: 'animation', pic: 7, loveCount: '1k', viewCount: '14k' },
+  { name: 'David Alpha', tag: 'animation', pic: 8, loveCount: '1k', viewCount: '14k' },
+  { name: 'David Cecil', tag: 'animation', pic: 9, loveCount: '1k', viewCount: '14k' },
+  { name: 'Irwin Alpha', tag: 'branding', pic: 10, loveCount: '1k', viewCount: '14k' },
+  { name: 'David Tsaqif', tag: 'branding', pic: 11, loveCount: '1k', viewCount: '14k' },
+  { name: 'Byron Cecil', tag: 'illustration', pic: 12, loveCount: '1k', viewCount: '14k' },
+  { name: 'Tsaqif Zeta', tag: 'illustration', pic: 13, loveCount: '1k', viewCount: '14k' },
+  { name: 'Nolan Brock', tag: 'illustration', pic: 14, loveCount: '1k', viewCount: '14k' },
+  { name: 'Smith Byron', tag: 'mobile', pic: 15, loveCount: '1k', viewCount: '14k' },
+  { name: 'Byron Lilac', tag: 'print', pic: 16, loveCount: '1k', viewCount: '14k' },
+  { name: 'Smith David', tag: 'product-design', pic: 17, loveCount: '1k', viewCount: '14k' },
+  { name: 'Alpha Zeta', tag: 'product-design', pic: 18, loveCount: '1k', viewCount: '14k' },
+  { name: 'Byron Tsaqif', tag: 'product-design', pic: 19, loveCount: '1k', viewCount: '14k' },
+  { name: 'Cecil David', tag: 'product-design', pic: 20, loveCount: '1k', viewCount: '14k' },
+  { name: 'Cecil Byron', tag: 'product-design', pic: 21, loveCount: '1k', viewCount: '14k' },
+  { name: 'Zeta Delta', tag: 'product-design', pic: 22, loveCount: '1k', viewCount: '14k' },
+  { name: 'Alpha Bella', tag: 'product-design', pic: 23, loveCount: '1k', viewCount: '14k' },
+  { name: 'Zeta Brock', tag: 'product-design', pic: 24, loveCount: '1k', viewCount: '14k' },
+  { name: 'Cecil Alpha', tag: 'typography', pic: 25, loveCount: '1k', viewCount: '14k' },
+  { name: 'Delta Alpha', tag: 'web-design', pic: 26, loveCount: '1k', viewCount: '14k' },
+  { name: 'David Lilac', tag: 'web-design', pic: 27, loveCount: '1k', viewCount: '14k' },
+  { name: 'Alpha Byron', tag: 'web-design', pic: 28, loveCount: '1k', viewCount: '14k' },
+  { name: 'Smith Irwin', tag: 'web-design', pic: 29, loveCount: '1k', viewCount: '14k' },
+  { name: 'Ammar Irwin', tag: 'web-design', pic: 30, loveCount: '1k', viewCount: '14k' },
 ];
 
 showDesignCollection(designs);
+
+/* ============================================= */
+
+/* ======= dark mode functionality =========== */
+
+let isInDarkMode = false;
+
+function toggleDarkMode() {
+  if (!isInDarkMode) {
+    document.body.classList.add('dark');
+    isInDarkMode = true;
+  } else {
+    document.body.classList.remove('dark');
+    isInDarkMode = false;
+  }
+}
+
+const toggleDarkModeButton = document.getElementById('toggle-dark-mode');
+toggleDarkModeButton.addEventListener('click', toggleDarkMode);
 
 /* ============================================= */
