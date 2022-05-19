@@ -1,7 +1,7 @@
 
 /* ======= load design collection dynamically =========== */
 
-function generateDesignCard(id, name, pic, loveCount, viewCount) {
+function generateDesignCard(id, name, pic, loveCount, viewCount, isLoved) {
   const designCard = document.createElement('div');
   designCard.classList.add('design')
   designCard.id = `design-${id}`;
@@ -28,7 +28,7 @@ function generateDesignCard(id, name, pic, loveCount, viewCount) {
   rightDesc.classList.add('design-desc-right');
   rightDesc.innerHTML = `
     <div>
-      <span class="desc-item-icon">&#10084;</span>
+      <span class="desc-item-icon ${isLoved ? 'icon-active' : ''}">&#10084;</span>
       <span class="desc-item-value">${loveCount}</span>
     </div>
     <div>
@@ -49,11 +49,12 @@ function showDesignCollection(designs) {
   const currentCollection = document.getElementById('collection');
 
   const newCollection = [];
-  designs.forEach(({name, pic, loveCount, viewCount}, idx) => {
-    designCard = generateDesignCard(idx, name, pic, loveCount, viewCount);
+  designs.forEach(({name, pic, loveCount, viewCount, isLoved}, idx) => {
+    designCard = generateDesignCard(idx, name, pic, loveCount, viewCount, isLoved);
     newCollection.push(designCard);
   });
   currentCollection.replaceChildren(...newCollection);
+  addToggleLoveFunctionality();
 }
 
 let designs = [
@@ -94,6 +95,22 @@ showDesignCollection(designs);
 /* ============================================= */
 
 /* ======= 1. "filter by category" functionality =========== */
+
+function filterDesignsByCategory(category) {
+  if (category === 'all') {
+    showDesignCollection(designs);
+    return;
+  }
+  const designsByCategory = designs.filter(design => (design.tag === category));
+  showDesignCollection(designsByCategory);
+}
+
+const categorySelectors = document.querySelectorAll('#control li');
+for (let categorySelector of categorySelectors) {
+  const category = categorySelector.dataset.category;
+  categorySelector.addEventListener('click', () => filterDesignsByCategory(category));
+}
+
 /* ============================================= */
 
 /* ======= 2. "love a design" functionality =========== */
@@ -111,11 +128,14 @@ function toggleLove(id) {
   }
 }
 
-const designCards = document.getElementsByClassName('design');
-for (let design of designCards) {
-  const designId = design.id.split('-')[1];
-  const loveIcon = design.getElementsByClassName('desc-item-icon')[0];
-  loveIcon.addEventListener('click', () => toggleLove(designId));
+// dijalankan pada showDesignCollection
+function addToggleLoveFunctionality() {
+  const designCards = document.getElementsByClassName('design');
+  for (let design of designCards) {
+    const designId = design.id.split('-')[1];
+    const loveIcon = design.getElementsByClassName('desc-item-icon')[0];
+    loveIcon.addEventListener('click', () => toggleLove(designId));
+  }
 }
 
 /* ============================================= */

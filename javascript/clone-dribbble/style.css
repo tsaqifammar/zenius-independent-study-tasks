@@ -207,11 +207,12 @@ nav {
   gap: 1rem;
 }
 
-#control a {
+#control li {
+  cursor: pointer;
   color: var(--gray-light);
 }
 
-#control a:hover {
+#control li:hover {
   color: var(--gray-dark);
 }
 
