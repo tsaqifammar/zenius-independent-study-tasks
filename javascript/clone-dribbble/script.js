@@ -57,43 +57,70 @@ function showDesignCollection(designs) {
 }
 
 let designs = [
-  { name: 'Tsaqif Ammar', tag: 'animation', pic: 1, loveCount: '1k', viewCount: '14k' },
-  { name: 'Bella Brock', tag: 'animation', pic: 2, loveCount: '1k', viewCount: '14k' },
-  { name: 'Brock Smith', tag: 'animation', pic: 3, loveCount: '1k', viewCount: '14k' },
-  { name: 'David Alpha', tag: 'animation', pic: 4, loveCount: '1k', viewCount: '14k' },
-  { name: 'Nolan Tsaqif', tag: 'animation', pic: 5, loveCount: '1k', viewCount: '14k' },
-  { name: 'Raven Irwin', tag: 'animation', pic: 6, loveCount: '1k', viewCount: '14k' },
-  { name: 'Lilac Tsaqif', tag: 'animation', pic: 7, loveCount: '1k', viewCount: '14k' },
-  { name: 'David Alpha', tag: 'animation', pic: 8, loveCount: '1k', viewCount: '14k' },
-  { name: 'David Cecil', tag: 'animation', pic: 9, loveCount: '1k', viewCount: '14k' },
-  { name: 'Irwin Alpha', tag: 'branding', pic: 10, loveCount: '1k', viewCount: '14k' },
-  { name: 'David Tsaqif', tag: 'branding', pic: 11, loveCount: '1k', viewCount: '14k' },
-  { name: 'Byron Cecil', tag: 'illustration', pic: 12, loveCount: '1k', viewCount: '14k' },
-  { name: 'Tsaqif Zeta', tag: 'illustration', pic: 13, loveCount: '1k', viewCount: '14k' },
-  { name: 'Nolan Brock', tag: 'illustration', pic: 14, loveCount: '1k', viewCount: '14k' },
-  { name: 'Smith Byron', tag: 'mobile', pic: 15, loveCount: '1k', viewCount: '14k' },
-  { name: 'Byron Lilac', tag: 'print', pic: 16, loveCount: '1k', viewCount: '14k' },
-  { name: 'Smith David', tag: 'product-design', pic: 17, loveCount: '1k', viewCount: '14k' },
-  { name: 'Alpha Zeta', tag: 'product-design', pic: 18, loveCount: '1k', viewCount: '14k' },
-  { name: 'Byron Tsaqif', tag: 'product-design', pic: 19, loveCount: '1k', viewCount: '14k' },
-  { name: 'Cecil David', tag: 'product-design', pic: 20, loveCount: '1k', viewCount: '14k' },
-  { name: 'Cecil Byron', tag: 'product-design', pic: 21, loveCount: '1k', viewCount: '14k' },
-  { name: 'Zeta Delta', tag: 'product-design', pic: 22, loveCount: '1k', viewCount: '14k' },
-  { name: 'Alpha Bella', tag: 'product-design', pic: 23, loveCount: '1k', viewCount: '14k' },
-  { name: 'Zeta Brock', tag: 'product-design', pic: 24, loveCount: '1k', viewCount: '14k' },
-  { name: 'Cecil Alpha', tag: 'typography', pic: 25, loveCount: '1k', viewCount: '14k' },
-  { name: 'Delta Alpha', tag: 'web-design', pic: 26, loveCount: '1k', viewCount: '14k' },
-  { name: 'David Lilac', tag: 'web-design', pic: 27, loveCount: '1k', viewCount: '14k' },
-  { name: 'Alpha Byron', tag: 'web-design', pic: 28, loveCount: '1k', viewCount: '14k' },
-  { name: 'Smith Irwin', tag: 'web-design', pic: 29, loveCount: '1k', viewCount: '14k' },
-  { name: 'Ammar Irwin', tag: 'web-design', pic: 30, loveCount: '1k', viewCount: '14k' },
+  { name: 'Tsaqif Ammar', tag: 'animation', pic: 1, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Brock Cecil', tag: 'animation', pic: 2, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'David Raven', tag: 'animation', pic: 3, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Smith Zeta', tag: 'animation', pic: 4, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Zeta Smith', tag: 'animation', pic: 5, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Cecil Lilac', tag: 'animation', pic: 6, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Alpha Raven', tag: 'animation', pic: 7, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Ammar Tsaqif', tag: 'animation', pic: 8, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Smith Delta', tag: 'animation', pic: 9, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Delta David', tag: 'branding', pic: 10, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Irwin David', tag: 'branding', pic: 11, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Lilac Zeta', tag: 'illustration', pic: 12, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Smith Zeta', tag: 'illustration', pic: 13, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Delta Ammar', tag: 'illustration', pic: 14, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Bella Lilac', tag: 'mobile', pic: 15, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Zeta Byron', tag: 'print', pic: 16, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Delta Nolan', tag: 'product-design', pic: 17, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Brock Tsaqif', tag: 'product-design', pic: 18, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Smith Delta', tag: 'product-design', pic: 19, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Byron Raven', tag: 'product-design', pic: 20, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Raven Brock', tag: 'product-design', pic: 21, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'David Lilac', tag: 'product-design', pic: 22, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Byron Tsaqif', tag: 'product-design', pic: 23, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Alpha David', tag: 'product-design', pic: 24, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Smith Raven', tag: 'typography', pic: 25, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Tsaqif Irwin', tag: 'web-design', pic: 26, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Irwin Ammar', tag: 'web-design', pic: 27, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Irwin Delta', tag: 'web-design', pic: 28, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Delta Zeta', tag: 'web-design', pic: 29, loveCount: '1k', viewCount: '14k', isLoved: false },
+  { name: 'Lilac Tsaqif', tag: 'web-design', pic: 30, loveCount: '1k', viewCount: '14k', isLoved: false },
 ];
 
 showDesignCollection(designs);
 
 /* ============================================= */
 
-/* ======= dark mode functionality =========== */
+/* ======= 1. "filter by category" functionality =========== */
+/* ============================================= */
+
+/* ======= 2. "love a design" functionality =========== */
+
+function toggleLove(id) {
+  console.log(id);
+  const designCardWithId = document.getElementById(`design-${id}`);
+  const loveIcon = designCardWithId.getElementsByClassName('desc-item-icon')[0];
+  if (!designs[id].isLoved) {
+    designs[id].isLoved = true;
+    loveIcon.classList.add('icon-active');
+  } else {
+    designs[id].isLoved = false;
+    loveIcon.classList.remove('icon-active');
+  }
+}
+
+const designCards = document.getElementsByClassName('design');
+for (let design of designCards) {
+  const designId = design.id.split('-')[1];
+  const loveIcon = design.getElementsByClassName('desc-item-icon')[0];
+  loveIcon.addEventListener('click', () => toggleLove(designId));
+}
+
+/* ============================================= */
+
+/* ======= 3. dark mode functionality =========== */
 
 let isInDarkMode = false;
 

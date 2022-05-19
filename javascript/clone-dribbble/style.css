@@ -273,11 +273,16 @@ nav {
 }
 
 .desc-item-icon {
+  cursor: pointer;
   color: var(--gray-light);
 }
 
 .desc-item-value {
   color: var(--black);
+}
+
+.icon-active {
+  color: var(--pink);
 }
 
 /* ========================================= */
