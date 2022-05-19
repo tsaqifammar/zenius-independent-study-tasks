@@ -14,7 +14,6 @@ function toggleDarkMode() {
 }
 
 const toggleDarkModeButton = document.getElementById('toggle-dark-mode');
-console.log(toggleDarkModeButton);
 toggleDarkModeButton.addEventListener('click', toggleDarkMode);
 
 /* ============================================= */
