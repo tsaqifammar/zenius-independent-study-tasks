@@ -4,6 +4,7 @@ Setelah mencoba me-recreate tampilan website [dribbble](https://dribbble.com/), 
 
 Adapun fitur yang dimaksud yaitu:
 
+- **Load designs data**, yaitu koleksi designs di load di awal menggunakan data array dari javascript. Sebelumnya, design ditulis satu-satu pada HTML.
 - **Toggle dark mode**, yaitu mengubah tema website dari light menjadi dark, dan sebaliknya. Dilakukan dengan klik tombol di kanan bawah.
 - **Filter designs by category**, yaitu dengan menekan salah satu kategori pada koleksi design. Contoh, apabila kategori `Animation` di klik, maka design dengan *tag* `animation` akan tertampilkan.
 - **Love a design**, yaitu pengguna dapat meng-klik icon *love* pada salah satu design atau sebaliknya. Apabila suatu design di-love, maka styling akan berubah menjadi merah.
