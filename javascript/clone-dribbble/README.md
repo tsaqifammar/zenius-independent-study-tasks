@@ -17,3 +17,13 @@ Folder terdiri dari 4 bagian, yaitu:
 - `style.css`: File yang memberikan styling untuk `index.html`.
 - `script.js`: File yang memberikan interaktivitas pada website.
 - `assets`: Folder yang berisikan gambar/svg yang akan digunakan pada webpage.
+
+## Hasil Website
+
+### Light mode
+
+![Light mode](./screenshot_hasil/hasil_tampilan_light_mode.png)
+
+### Dark mode
+
+![Dark mode](./screenshot_hasil/hasil_tampilan_dark_mode.png)
