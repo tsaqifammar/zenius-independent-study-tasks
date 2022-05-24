@@ -6,8 +6,8 @@ import DribbbleBallIcon from '../assets/dribbble-ball-icon.svg';
 function Footer() {
   return (
     <footer>
-      <div class="container">
-        <div class="upper-content">
+      <div className="container">
+        <div className="upper-content">
           <div id="company-info">
             <img src={DribbbleLogo} alt="logo" />
             <p>Dribbble is the world’s leading community for creatives to share, grow, and get hired.</p>
@@ -29,9 +29,9 @@ function Footer() {
             <li><a href="#">Search for designers</a></li>
           </ul>
         </div>
-        <div class="lower-content">
+        <div className="lower-content">
           <span>&#169; 2022 Dribbble. All rights reserved.</span>
-          <span class="lower-content-right">
+          <span className="lower-content-right">
             <strong>18,092,697</strong>
             shots dribbbled
             <img src={DribbbleBallIcon} alt="dribbble" />
