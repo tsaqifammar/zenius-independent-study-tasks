@@ -1,10 +1,11 @@
+import ToggleDarkModeButton from "./components/ToggleDarkModeButton";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 
 function App() {
   return (
     <>
-      <button id="toggle-dark-mode" type="button">&#9728;</button>
+      <ToggleDarkModeButton />
       <Navbar />
       <Hero />
     </>
