@@ -1,8 +1,13 @@
-import './App.css';
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
 
 function App() {
   return (
-    <h1 className="custom">Hello world!</h1>
+    <>
+      <button id="toggle-dark-mode" type="button">&#9728;</button>
+      <Navbar />
+      <Hero />
+    </>
   );
 }
 
