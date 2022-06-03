@@ -20,6 +20,14 @@ Projek ini terbagi menjadi beberapa bagian yaitu:
   - `index.css`: File yang memberikan styling pada webpage.
   - `App.js`: File yang menjadi titik masuk aplikasinya.
 
+## Get Started
+
+Untuk menjalankan, ikuti tahap-tahap berikut:
+
+1. Download folder react ini.
+2. Jalankan command `npm install` untuk meng-install library/dependency yang dibutuhkan (contoh: react). Sebuah folder `node_modules` akan terbuat.
+3. Jalankan command `npm run start` untuk menjalankan aplikasi.
+
 ## Hasil Website
 
 ### Light mode
