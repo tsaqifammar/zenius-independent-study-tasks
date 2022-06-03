@@ -1,6 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import HeroIllustration from '../assets/illustration.png';
 
+/**
+ * Hero component.
+ */
 function Hero() {
   return (
     <section id="hero">

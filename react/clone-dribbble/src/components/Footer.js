@@ -3,6 +3,9 @@
 import DribbbleLogo from '../assets/dribbble-logo.svg';
 import DribbbleBallIcon from '../assets/dribbble-ball-icon.svg';
 
+/**
+ * Footer component.
+ */
 function Footer() {
   return (
     <footer>

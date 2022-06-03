@@ -1,6 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import DribbbleLogo from '../assets/dribbble-logo.svg';
 
+/**
+ * Navigation bar component.
+ */
 function Navbar() {
   return (
     <nav>

@@ -1,3 +1,6 @@
+/**
+ * Categories data.
+ */
 const CATEGORIES = [
   { value: 'all', display: 'All' },
   { value: 'animation', display: 'Animation' },
@@ -10,6 +13,9 @@ const CATEGORIES = [
   { value: 'web-design', display: 'Web Design' },
 ];
 
+/**
+ * A component to filter designs (e.g. based on category).
+ */
 function DesignsControl(props) {
   const { setCategory } = props;
 
@@ -21,6 +27,10 @@ function DesignsControl(props) {
         <option value="goods">Goods for Sale</option>
       </select>
       <ul>
+        {/**
+         * Map every category, and create a list item for each.
+         * If clicked, then category state will change accordingly.
+         */}
         {CATEGORIES.map(({ value, display }, idx) => (
           <li key={idx} onClick={() => setCategory(value)}>
             {display}
