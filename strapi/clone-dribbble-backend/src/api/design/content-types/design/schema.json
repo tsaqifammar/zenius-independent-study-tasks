@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "designs",
+  "info": {
+    "singularName": "design",
+    "pluralName": "designs",
+    "displayName": "Design",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "designs"
+    },
+    "loveCount": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "viewCount": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "designs"
+    },
+    "isLoved": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}
