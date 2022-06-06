@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getDesignsData } from '../api/designs';
 import DesignsCollection from './DesignsCollection';
 import DesignsControl from './DesignsControl';
-import designsData from '../data/designsData';
 
 /**
  * A container component that basically consists of:
@@ -12,26 +12,25 @@ function DesignsContainer() {
   /**
    * Designs data. This will be displayed in a grid-like manner in DesignsCollection.
    */
-  const [designsCollection, setDesignsCollection] = useState(designsData);
+  const [designsCollection, setDesignsCollection] = useState([]);
   /**
    * What category is currently chosen. This state can be modified by DesignsControl.
    */
   const [categoryChosen, setCategoryChosen] = useState('all');
 
-  let designsWithCategoryChosen = designsCollection;
-  if (categoryChosen !== 'all') {
-    // Filter-in the designs with 'tag' matching with 'categoryChosen'
-    designsWithCategoryChosen = designsCollection.filter((d) => d.tag === categoryChosen);
-  }
+  useEffect(() => {
+    getDesignsData(categoryChosen).then((res) => setDesignsCollection(res));
+  }, [categoryChosen]);
 
   /**
    * A function that will toggle the 'isLoved' info in designsCollection
    * for a design with a specific id.
    */
   const loveDesignById = (id) => {
-    const newDesignsCollection = [...designsCollection];
-    newDesignsCollection[id].isLoved = !newDesignsCollection[id].isLoved;
-    setDesignsCollection(newDesignsCollection);
+    console.log(id);
+    // const newDesignsCollection = [...designsCollection];
+    // newDesignsCollection[id].isLoved = !newDesignsCollection[id].isLoved;
+    // setDesignsCollection(newDesignsCollection);
   };
 
   return (
@@ -39,7 +38,7 @@ function DesignsContainer() {
       <div className="container">
         <DesignsControl setCategory={setCategoryChosen} />
         <DesignsCollection
-          designs={designsWithCategoryChosen}
+          designs={designsCollection}
           onLovePressed={loveDesignById}
         />
       </div>

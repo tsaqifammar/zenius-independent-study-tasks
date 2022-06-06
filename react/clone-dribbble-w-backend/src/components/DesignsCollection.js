@@ -21,20 +21,19 @@ function DesignsCollection(props) {
        * - A description that contains design infos (designer, loveCount, viewCount)
        */}
       {designs.map((d) => {
-        const { id, name, loveCount, viewCount, isLoved } = d;
-        const thumbnail = `https://loremflickr.com/320/240/art?random=${id}`;
+        const { id, user, designLink, loveCount, viewCount, isLoved } = d;
 
         return (
           <div key={id} className="design">
             {/* Thumbnail */}
-            <img src={thumbnail} alt="design-thumbnail" />
+            <img src={designLink} alt="design-thumbnail" />
 
             {/* Description */}
             <div className="design-desc">
               {/* Designer information */}
               <div className="design-desc-left">
                 <img src={profilePicture} alt="author-pic" />
-                <p>{name}</p>
+                <p>{user}</p>
               </div>
               {/* Love count and View count */}
               <div className="design-desc-right">
