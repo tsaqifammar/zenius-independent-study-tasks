@@ -44,4 +44,9 @@ async function getDesignsData(category) {
   return response;
 }
 
-export { getDesignsData };
+async function updateDesignIsLoved(id, isLoved) {
+  const data = { isLoved };
+  await axios.put(`/designs/${id}`, { data });
+}
+
+export { getDesignsData, updateDesignIsLoved };

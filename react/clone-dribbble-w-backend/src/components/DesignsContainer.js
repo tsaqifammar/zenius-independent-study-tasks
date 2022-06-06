@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getDesignsData } from '../api/designs';
+import { getDesignsData, updateDesignIsLoved } from '../api/designs';
 import DesignsCollection from './DesignsCollection';
 import DesignsControl from './DesignsControl';
 
@@ -26,11 +26,23 @@ function DesignsContainer() {
    * A function that will toggle the 'isLoved' info in designsCollection
    * for a design with a specific id.
    */
-  const loveDesignById = (id) => {
-    console.log(id);
-    // const newDesignsCollection = [...designsCollection];
-    // newDesignsCollection[id].isLoved = !newDesignsCollection[id].isLoved;
-    // setDesignsCollection(newDesignsCollection);
+  const loveDesignById = async (id) => {
+    try {
+      /** Update to db */
+      const currentIsLoved = designsCollection.filter((d) => d.id === id).isLoved;
+      await updateDesignIsLoved(id, !currentIsLoved);
+
+      /** If succeeded, then update UI */
+      const newDesignsCollection = designsCollection.map((d) => {
+        const design = { ...d };
+        if (design.id === id)
+          design.isLoved = !design.isLoved;
+        return design;
+      });
+      setDesignsCollection(newDesignsCollection);
+    } catch (error) {
+      console.log('An error occured: Love failed');
+    }
   };
 
   return (
