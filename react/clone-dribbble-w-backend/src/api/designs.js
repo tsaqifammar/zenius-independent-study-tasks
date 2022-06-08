@@ -1,6 +1,9 @@
 import axios from './axios';
 import qs from 'qs';
 
+/**
+ * Format designs data to be cleaner
+ */
 function formatDesignsData(designsData) {
   return designsData.map((d) => {
     const {
@@ -23,7 +26,11 @@ function formatDesignsData(designsData) {
   });
 }
 
+/**
+ * Get designs data by category
+ */
 async function getDesignsData(category) {
+  /** Request query */
   let query = {
     populate: {
       category: { fields: ['code'] },
@@ -34,9 +41,14 @@ async function getDesignsData(category) {
     },
   };
 
+  /**
+   * If the category isn't "all", it means that the category info is present.
+   * Therefore, include the filter by category parameter in the query.
+   */
   if (category !== 'all')
     query.filters = { category: { code: { $eq: category } } };
 
+  /** Make the GET designs request */
   query = qs.stringify(query, { encodeValuesOnly: true });
   let response = await axios.get(`/designs?${query}`);
   response = formatDesignsData(response.data.data);
@@ -44,6 +56,9 @@ async function getDesignsData(category) {
   return response;
 }
 
+/**
+ * Update design's isLoved information
+ */
 async function updateDesignIsLoved(id, isLoved) {
   const data = { isLoved };
   await axios.put(`/designs/${id}`, { data });
