@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import DribbbleLogo from '../assets/dribbble-logo.svg';
+import SignUpButton from './SignUpButton';
 
 /**
  * Navigation bar component.
@@ -21,7 +22,7 @@ function Navbar() {
       <div id="nav-right">
         <a href="#" className="search">&#x1F50E;&#xFE0E;</a>
         <a href="#" className="sign-in">Sign in</a>
-        <a href="#" className="btn sign-up">Sign up</a>
+        <SignUpButton />
       </div>
     </nav>
   );

@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import HeroIllustration from '../assets/illustration.png';
+import SignUpButton from './SignUpButton';
 
 /**
  * Hero component.
@@ -11,7 +12,7 @@ function Hero() {
         <div id="hero-left">
           <h1>Discover the world's top designers & creatives</h1>
           <p>Dribbble is the leading destination to find & showcase creative work and home to the world's best design professionals.</p>
-          <a href="#" className="btn sign-up">Sign up</a>
+          <SignUpButton />
         </div>
         <div id="hero-right">
           <img src={HeroIllustration} alt="pic" />
