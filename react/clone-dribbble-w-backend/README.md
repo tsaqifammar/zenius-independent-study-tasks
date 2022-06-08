@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Dokumentasi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Dribbble](https://dribbble.com) clone dengan React sebelumnya, tetapi ditambahkan 3 fitur yang berhubungan dengan backend.
 
-## Available Scripts
+Adapun fitur yang dimaksud yaitu:
+- **Sign up user**, yaitu membuat akun user baru.
+- **Filter designs by category**, yaitu mem-filter designs berdasarkan kategori.
+- **Love a design**, yaitu pengguna dapat meng-klik icon *love* pada salah satu design atau sebaliknya. Mirip dengan *like* pada sosial media.
 
-In the project directory, you can run:
+## Structure
 
-### `npm start`
+Projek ini terbagi menjadi beberapa bagian yaitu:
+- `public`: Folder di mana file HTML utama nya disimpan. HTML "kosong" ini akan diisi dengan code React nya saat jalan.
+- `src`: Folder yang merupakan core dari aplikasi react ini. Berisikan:
+  - `assets`: Folder yang berisikan gambar/svg yang akan digunakan pada webpage.
+  - `component`: Folder berisikan code untuk komponen-komponen web.
+  - `api`: Folder berisikan fungsi pemanggilan api.
+  - `index.css`: File yang memberikan styling pada webpage.
+  - `App.js`: File yang menjadi titik masuk aplikasinya.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Get Started
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Untuk menjalankan, ikuti tahap-tahap berikut:
 
-### `npm test`
+1. Download folder react ini.
+2. Jalankan command `npm install` untuk meng-install library/dependency yang dibutuhkan (contoh: react). Sebuah folder `node_modules` akan terbuat.
+3. Jalankan command `npm run start` untuk menjalankan aplikasi.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Hasil Website
 
-### `npm run build`
+### Light mode
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Light mode](./screenshot_hasil/hasil_tampilan_light_mode.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Dark mode
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Dark mode](./screenshot_hasil/hasil_tampilan_dark_mode.png)
