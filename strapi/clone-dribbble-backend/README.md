@@ -52,7 +52,7 @@ Terdapat 3 fitur yang ingin ditambahkan. Berikut contoh cara berkomunikasi denga
       users_permissions_user: { fields: ['username'] },
     },
     filters: {
-      category: { code: { $eq: category } }
+      category: { code: { $eq: 'animation' } }
     }
   }
   ```
