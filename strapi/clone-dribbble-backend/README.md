@@ -1,57 +1,72 @@
-# 🚀 Getting started with Strapi
+# Dokumentasi
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
+API backend untuk [dribbble clone](https://github.com/tsaqifammar/zenius-independent-study-tasks/tree/main/react/clone-dribbble-w-backend) pada tugas ReactJS sebelumnya.
 
-### `develop`
+## Fitur API backend yang ingin ditambahkan ke ReactJS
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
+Terdapat 3 fitur memanfaatkan backend yang ingin ditambahkan ke tugas ReactJS sebelumnya, yaitu:
+- **Sign up user**, yaitu membuat akun user baru.
+- **Filter designs by category**, yaitu mem-filter designs berdasarkan kategori.
+- **Love a design**, yaitu pengguna dapat meng-klik icon *love* pada salah satu design atau sebaliknya. Mirip dengan *like* pada sosial media.
 
-```
-npm run develop
-# or
-yarn develop
-```
+## Desain Tabel / Collection Types
 
-### `start`
+### User
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
+Tabel ini disetup secara default oleh strapi. Field yang dimiliki antara lain: username, email, password, dsb.
 
-```
-npm run start
-# or
-yarn start
-```
+### Category
 
-### `build`
+Terdapat beberapa kategori desain yang ada pada dribbble (contoh: Animation, Illustration, Product Design, dsb.). Field yang dimiliki tabel ini yaitu:
+- `code`: Kode dari kategori.
+- `name`: Display name dari kategori.
+- `designs`: Field relasi ke *Design* dengan hubungan 1-to-many. Menandakan desain-desain apa saja yang termasuk kategori tersebut.
 
-Build your admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
+### Design
 
-```
-npm run build
-# or
-yarn build
-```
+Tabel ini berisikan informasi untuk tiap desain pada dribbble clone. Field yang dimiliki tabel ini yaitu:
+- `category`: Field relasi dengan *Category* yang menandakan termasuk kategori apa desain ini.
+- `loveCount`: Field yang menandakan banyak like yang didapat desain.
+- `viewCount`: Field yang menandakan banyak view yang didapat desain.
+- `user`: Field relasi dengan *User* yang menandakan pembuat/designer dari desain ini.
+- `designLink`: Field yang berisikan url gambar dari desain nya.
+- `isLoved`: Field yang menandakan apakah desain ini sedang di like atau tidak.
 
-## ⚙️ Deployment
+## Implementasi fitur API
 
-Strapi gives you many possible deployment options for your project. Find the one that suits you on the [deployment section of the documentation](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html).
+Terdapat 3 fitur yang ingin ditambahkan. Berikut contoh cara berkomunikasi dengan API nya:
+1. **Sign up user**: `POST /api/users` dengan data pada request body:
+  ```js
+  {
+    "username": "helloworld",
+    "email": "hello@gmail.com",
+    "password": "hello123"
+  }
+  ```
 
-## 📚 Learn more
+2. **Filter designs by category**: `GET /api/designs?{query}` dengan query (parse dengan `qs`):
+  ```js
+  {
+    populate: {
+      category: { fields: ['code'] },
+      users_permissions_user: { fields: ['username'] },
+    },
+    filters: {
+      category: { code: { $eq: category } }
+    }
+  }
+  ```
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://docs.strapi.io) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+3. **Love a design**: `PUT /api/designs/{id}` dengan data pada request body:
+  ```js
+  {
+    "isLoved": true // atau false
+  }
+  ```
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+## Get started
 
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+Diambil dari README strapi, berikut command yang bisa dijalankan:
+- Start dengan autoReload: `npm run develop`
+- Start tanpa autoReload: `npm run start`
+- Build admin panel: `npm run build`
